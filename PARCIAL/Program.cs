@@ -8,48 +8,42 @@ namespace Parcial
     class Program
     {
 
-        public static int Primo(int mostrar_p)
+        public static int Fibonacci(int n)
         {
-            int n, d;
-            int primo;
-
-            n = 2;
-            while (mostrar_p > 0)
+            int x = 0, y = 1, z;
+            for (int i = 1; i <= n; i++)
             {
+                if (i == 1)
 
-               
-                primo = 1;
-                for (d = 2; d < n; ++d)
+                    Console.WriteLine(x);
+                else
                 {
-                    if (n % d == 0)
+                    if (i == 2)
+
+                        Console.WriteLine(y);
+
+
+                    else
                     {
-                        primo = 0;
-                       
+                        z = x + y;
+                        Console.WriteLine(z);
+                        x = y;
+                        y = z;
                     }
                 }
-
-              
-                if (primo != 0)
-                {
-                    Console.WriteLine("\n");
-                    Console.WriteLine("Los números primos son: {0}", n);
-                    mostrar_p--;
-                }
-                n++;
             }
-
-            Console.WriteLine("\n");
             return n;
-
         }
-        static void Main(string[] args)
-        {
-            int n, np;
 
-            Console.WriteLine("Ingrese un número :");
+        public static void Main(string[] args)
+        {
+
+            int n;
+            Console.Write("INGRESE NÚMERO N :");
             n = int.Parse(Console.ReadLine());
-            Primo(n);
-            //Console.WriteLine(np);
+            Console.WriteLine("LOS NÚMEROS FIBONACCI SON :");
+            Fibonacci(n);
+            // Console.WriteLine(n);
             Console.ReadKey();
         }
     }
